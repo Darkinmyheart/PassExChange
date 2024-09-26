@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Detail-Ticket</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top px-0">
+        <div class="container px-0" style="max-width: 100%;">
+            <div class="topbar">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-8">
+                        <div class="topbar-info d-flex flex-wrap">
+                            <a href="#" class="text-light me-4"><i
+                                    class="fas fa-envelope text-white me-2"></i>minhtac103@gmail.com</a>
+                            <a href="#" class="text-light"><i
+                                    class="fas fa-phone-alt text-white me-2"></i>+0395740351</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="topbar-icon d-flex align-items-center justify-content-end">
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-light bg-light navbar-expand-xl">
+                <a href="index.html" class="navbar-brand ms-3">
+                    <h1 class="text-primary display-5">PassExChange</h1>
+                </a>
+                <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+
+                <div class="style__Wrapper-sc-czt9o-0 eyfsCu"><span><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" id="search-icon">
+                            <path d="M11 17a6 6 0 100-12 6 6 0 000 12zM18.5 18.5l-3-3" stroke="#2A2D34" stroke-width="2"
+                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></span><input type="text" name="search-input" id="search-input" readonly=""
+                        placeholder="Bạn tìm gì hôm nay?" value=""><button>Tìm kiếm</button></div>
+                <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
+
+                    <div class="navbar-nav ms-auto">
+                        <a th:href="@{/index}" class="nav-item nav-link active">Home</a>
+                        
+                        <a href="about.html" class="nav-item nav-link">Music</a>
+                        <a href="service.html" class="nav-item nav-link">Theaters & Art</a>
+                        <a href="causes.html" class="nav-item nav-link">Movie</a>
+                        <a href="events.html" class="nav-item nav-link">Events</a>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                        <a href="" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Body star -->
+    <div class="container" style="margin-top: 10%;">
+        <div class="card mb-3 mt-3">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">[HCM] Hà Trần: Thiên Hà Tinh Khôi</h5>
+                        <p class="card-text"><i class="fa-solid fa-calendar-days" style="color: #ff7b00;"></i> 19:00 -
+                            22:00, 10 tháng 8 năm
+                            2024</p>
+                        <p><i class="fa-solid fa-location-dot" style="color: #ff7b00;"></i> Nhà hát Hoà Bình</p>
+
+                        <small class=" text-body-secondary">
+                            240 Đ. 3 tháng 2, Phường 12, Quận 10, Thành Phố Hồ Chí Minh
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <img src="/img/hatran.jpg" class="img-fluid rounded-0 border-0" alt="...">
+                </div>
+            </div>
+
+            <div class="card-footer justify-content-center">
+                <button class="btn" style="width: 200px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">BUY
+                    NOW <i class="fa-regular fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+
+
+        <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        GIỚI THIỆU VỀ SỰ KIỆN
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <h5>THỜI GIAN VÀ ĐỊA ĐIỂM TỔ CHỨC LIVESHOW 30 NĂM HÀ TRẦN - THIÊN HÀ TINH KHÔI | TP. HỒ CHÍ MINH
+                        </h5>
+                        <p><strong>1. Thời gian:</strong>
+                            19:00 Thứ Bảy - Ngày 24/07/2024
+                        </p>
+                        <p><strong>2. Địa điểm:</strong>
+                            Nhà hát Hoà Bình - 240 Đ. 3 tháng 2, Phường 12, Quận 10, Thành Phố Hồ Chí Minh</p>
+                        <p><strong>3. Giá vé đêm nhạc LIVESHOW 30 NĂM HÀ TRẦN - THIÊN HÀ TINH KHÔI tại Hà Nội:</strong>
+                        <ul>
+                            <li>Sắc Màu: 4.800.000 VNĐ/vé</li>
+                            <li>Thăng Hoa: 4.200.000 VNĐ/vé</li>
+                            <li>Nhật Thực: 3.800.000 VNĐ/vé</li>
+                            <li> Tình Ca: 2.500.000VNĐ/vé</li>
+                            <li>Ngẫu Hứng Phố: 1.800.000VNĐ/vé</li>
+                            <li>Dệt Tầm Gai: 1.200.000VNĐ/vé</li>
+                        </ul>
+                        </p>
+
+                        <div class="sodo text-center">
+                            <ul class="sodo-menu">
+                                <li><a href="#"><strong>Sơ đồ chỗ ngồi</strong></a></li>
+                            </ul>
+                            <img src="/sdcn.jpg" alt="Sơ đồ chỗ ngồi">
+                        </div>
+
+                        <div class="description">
+                            <p><strong>LƯU Ý:</strong> Tất cả giá vé trên chưa bao gồm thuế giá trị gia tăng theo quy
+                                định của pháp luật áp dụng hiện hành. Giá vé trên tương ứng với 1 chỗ ngồi chỉ áp dụng
+                                cho người lớn hoặc trẻ em trên 6 tuổi.</p>
+                        </div>
+                        <hr>
+                        <div class="ticket-purchase-form">
+                            <h5>HÌNH THỨC MUA VÀ XÁC NHẬN KHI KHÁCH HÀNG ĐẶT QUA PASS EXCHANGE</h5>
+                            <ul>
+                                <li>Khách hàng đặt qua Pass Exchange, sau khi đặt và thanh toán thành công bên hệ thống
+                                    Pass Exchange sẽ gửi mail chỉ xác nhận mã đặt chỗ và đã thanh toán thành công, số
+                                    lượng
+                                    vé, hạng vé,... (1 đơn hàng chỉ gửi một mã QR xác nhận chỗ, ví dụ 1 đơn hàng 5 vé
+                                    chỉ gửi 1 mã QR xác nhận chỗ).</li>
+                            </ul>
+                            <p><strong>LƯU Ý:</strong> Mã đặt chỗ này chỉ là mã xác nhận đặt chỗ và thanh toán thành
+                                công, khi khách hàng nhận được thông tin đặt chỗ thành công thì chậm nhất trong vòng 5
+                                (năm) ngày làm việc trước ngày sự kiện (Hà Nội - 24/08/2024) khách hàng sẽ nhận được
+                                (các) mã vé QR (check in tại sự kiện) của BTC (Interstella) qua địa chỉ email khách hàng
+                                đã cung cấp.</p>
+                            <ul>
+                                <li>Trong quá trình mua vé, đối với hạng vé ngồi, khách hàng không được chọn vị trí ngồi
+                                    chính xác. BTC (Interstella) sẽ xuất vé có số ghế ngồi cụ thể cho khách hàng và
+                                    khách hàng bắt buộc phải ngồi theo đúng số ghế trên vé.</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="regulations">
+                            <h5>NHỮNG QUY ĐỊNH CẦN BIẾT KHI MUA VÉ:</h5>
+                            <ul>
+                                <li>Mỗi Vé tương ứng với 01 khách tham gia (không bao gồm trẻ em).</li>
+                                <li>Người Mua kiểm tra lại thông tin Vé (tổng số vé, loại vé, số vé từng loại) và số
+                                    tiền trước khi xác nhận Đơn hàng mua Vé.</li>
+                                <li>Vé Sự Kiện là Vé không được đổi hoặc trả lại dưới mọi hình thức, khách hàng vui lòng
+                                    cân nhắc kỹ trước khi mua.</li>
+                                <li>Khách hàng được mua tối đa 10 Vé/ 1 giao dịch.</li>
+                                <li>Thời gian giữ Vé: 15 PHÚT/ lượt.</li>
+                                <li>Khách hàng có trách nhiệm bảo mật tuyệt đối mã Vé điện tử của mình. Trường hợp có
+                                    nhiều hơn 1 người check-in bằng 1 mã Vé điện tử thì BTC sẽ chấp nhận người đầu tiên
+                                    check-in mã Vé đó được tham gia chương trình.</li>
+                                <li>Đối với Người Mua đặt qua Pass Exchange, sau khi hoàn thành thanh toán tiền mua Vé
+                                    (Giao
+                                    dịch thành công), hệ thống sẽ thực hiện gửi Mã Đặt Chỗ thành công cho Người Mua qua
+                                    email. Chậm nhất trong vòng 5 (năm) ngày làm việc trước ngày sự kiện diễn ra (Hà
+                                    Nội - 24/08/2024) BTC sẽ thực hiện gửi (các) Mã Vé QR (dùng để checkin vào cổng)
+                                    cho Người Mua qua email Người Mua đã cung cấp.</li>
+                                <li>Để đảm bảo nhận được Mã Đặt Chỗ và Mã Vé QR, trước khi thực hiện việc đặt mua Vé
+                                    theo quy trình giao dịch tại Quy chế này, Người Mua nên chủ động kiểm tra và điền
+                                    đầy đủ, chính xác thông tin email trên các nền tảng bán Vé.</li>
+                                <li>Nếu trong vòng 24 giờ kể từ khi mua Vé mà Người Mua vẫn chưa nhận được Mã Đặt Chỗ
+                                    (đối với Vé đặt qua Pass Exchange) / Tin nhắn xác nhận đặt chỗ (đối với Vé đặt qua
+                                    fanpage) thì Người Mua vui lòng liên hệ Hotline: 08.999.80.818 - 0243.788.00.99 hoặc
+                                    nhắn tin cho fanpage Pass Exchange để được hỗ trợ.</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="check-in">
+                            <h5>QUY ĐỊNH CHECK IN:</h5>
+                            <ul>
+                                <li> Thời gian mở cổng check in: 16h00 ngày 24/08/2024.</li>
+                                <li>Thời gian đóng cổng check in: 20h00 ngày 24/08/2024</li>
+                            </ul>
+                            <p>Khách hàng có trách nhiệm bảo mật tuyệt đối mã Mã QR Vé điện tử của mình. Trường hợp có
+                                nhiều hơn 1 người check-in bằng 1 Mã QR Vé điện tử thì BTC sẽ chấp nhận người đầu tiên
+                                check-in mã QR Vé đó được tham gia chương trình.</p>
+                            <p>
+                                Ngay khi check in tại sự kiện, khách hàng sẽ được nhận vòng đeo tay. Điều kiện hợp lệ để
+                                vào tham gia sự kiện là: (1) có đủ vòng đeo tay (còn nguyên vẹn chưa bị rách/xé) và có
+                                đóng dấu check-in của chương trình; (2) khách hàng phải xuất trình được vé điện tử (hoặc
+                                vé mời) do BTC gửi của mình bất cứ lúc nào được yêu cầu. Khách hàng sẽ không được phép
+                                qua khu vực kiểm soát an ninh của sự kiện nếu thiếu 1 trong 2 điều trên.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="the-show">
+                            <h5>QUY ĐỊNH THAM GIA SHOW:
+
+                            </h5>
+                            <ul>
+                                <li>Trẻ em dưới 6 tuổi không được tham gia.</li>
+                                <li>Cấm mang vào địa điểm diễn ra sự kiện các loại vũ khí, vật sắc nhọn, chất nổ, chất
+                                    độc, chất dễ cháy và chất phóng xạ, chất gây nghiện và chất kích thích, đồ ăn và
+                                    thức uống có màu, mùi, vị (ngoại trừ nhãn, hiệu được phép) hoặc các vật phẩm khác có
+                                    thể gây ảnh hưởng đến trật tự và công tác tổ chức sự kiện.</li>
+                                <li>Cấm mang vào địa điểm đèn laser, đèn pin, các vật nhọn, ô dù, bút viết, gậy selfie,
+                                    chân máy ảnh/máy quay. Không mang các thiết bị cồng kềnh.</li>
+                                <li>Cấm mang vào địa điểm áp-phích, băng cổ vũ, bảng chỉ dẫn… có nội dung liên quan đến
+                                    chính trị, tôn giáo và/hoặc chứa ngôn từ không phù hợp với thuần phong mỹ tục.</li>
+                                <li>Nghiêm cấm hút thuốc (kể cả thuốc lá điện tử) tại địa điểm diễn ra sự kiện.</li>
+                                <li>Cấm các loài động vật hoặc thú nuôi.</li>
+                                <li>Trang phục tham gia lịch sự, không phản cảm, không chứa hoạ tiết, thông điệp tuyên
+                                    truyền về tôn giáo, chính trị, công kích cá nhân và tổ chức hoặc bất kỳ những vấn đề
+                                    nào trái với thuần phong mỹ tục.</li>
+                                <li>Tất cả người tham dự đều phải được kiểm tra túi/balo/túi xách tại tất cả các cổng
+                                    vào trước khi vào bên trong.</li>
+                                <li>BTC có quyền yêu cầu kiểm tra, xem xét và từ chối quyền tham gia sự kiện đối với cá
+                                    nhân/nhóm có dấu hiệu thực hiện các hành vi trái pháp luật, tuyên truyền tôn giáo
+                                    trái phép, hay bất kỳ hoạt động nào làm ảnh hưởng tiêu cực đến sự kiện.</li>
+                                <li>Ban tổ chức có quyền thay đổi thời gian, bố cục sự kiện mà không cần thông báo
+                                    trước.</li>
+                                <li>Khi tham gia chương trình đồng nghĩa với việc bạn đã đồng ý cho phép BTC sử dụng
+                                    hình ảnh của mình để khai thác cho các sản phẩm ghi hình, ghi âm của chương trình.
+                                </li>
+                                <li>Quyết định của BTC là quyết định cuối cùng trong mọi trường hợp.</li>
+
+                            </ul>
+                            <div class="btn-tag-container d-flex ms-2">
+                                <button type="button" class="btn-tag"># Đêm nhạc hà trần 30 year live concert</button>
+                                <button type="button" class="btn-tag"># Đêm nhạc hà trần tại hà nội</button>
+                                <button type="button" class="btn-tag"># Đêm nhạc hà trần 2024 tại hà nội</button>
+                                <button type="button" class="btn-tag"># bán vé đêm nhạc hà trần tại hà nội</button>
+                                <button type="button" class="btn-tag"># bán vé liveshow hà trần tại hà nội 2024</button>
+                                <button type="button" class="btn-tag"># hà trần 30 year live concert</button>
+                                <button type="button" class="btn-tag"># Đêm nhạc hà trần thiên hà tinh khôi</button>
+                                <button type="button" class="btn-tag"># bán vé đêm nhạc hà trần thiên hà tinh
+                                    khôi</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        THÔNG TIN ĐƠN VỊ TỔ CHỨC
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body d-flex">
+                        <img src="/dvtc.jpg" alt="">
+                        <h6 class="ms-5">BẾN THÀNH - AURA - INTERSTELLA</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="releted-events mt-5 ms-2 me-2 mb-2">
+        <h3 class="text-center">Sự kiện liên quan</h3>
+        <div class="row mt-3">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="service-item">
+                    <img src="https://ticketgo.vn/uploads/images/event-logo/event_logo-c5ecdf2546d27d26b30f13ea4f70c220.jpg"
+                        class="img-fluid w-100" alt="Image">
+                </div>
+                <div class="service-link d-flex flex-column align-items-start p-3 bg-light rounded shadow-sm">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-body me-3"><i class="fas fa-map-marker-alt me-1"></i>Quảng Nam</span>
+                        <span class="text-body"><i class="fas fa-calendar-alt me-1"></i>10/07/2024</span>
+                    </div>
+                    <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                        class="location-text mb-2" style="color: black; text-decoration: none;">Show diễn Teh Dar</a>
+                    <div class="d-flex justify-content-between w-100">
+                        <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                            class="h4 mb-0 price-text">From: 490.000đ</a>
+                        <span class="text-muted">Date: 10/07/2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="service-item">
+                    <img src="https://ticketgo.vn/uploads/images/event-logo/event_logo-c5ecdf2546d27d26b30f13ea4f70c220.jpg"
+                        class="img-fluid w-100" alt="Image">
+                </div>
+                <div class="service-link d-flex flex-column align-items-start p-3 bg-light rounded shadow-sm">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-body me-3"><i class="fas fa-map-marker-alt me-1"></i>Quảng Nam</span>
+                        <span class="text-body"><i class="fas fa-calendar-alt me-1"></i>10/07/2024</span>
+                    </div>
+                    <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                        class="location-text mb-2" style="color: black; text-decoration: none;">Show diễn Teh Dar</a>
+                    <div class="d-flex justify-content-between w-100">
+                        <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                            class="h4 mb-0 price-text">From: 490.000đ</a>
+                        <span class="text-muted">Date: 10/07/2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="service-item">
+                    <img src="https://ticketgo.vn/uploads/images/event-logo/event_logo-c5ecdf2546d27d26b30f13ea4f70c220.jpg"
+                        class="img-fluid w-100" alt="Image">
+                </div>
+                <div class="service-link d-flex flex-column align-items-start p-3 bg-light rounded shadow-sm">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-body me-3"><i class="fas fa-map-marker-alt me-1"></i>Quảng Nam</span>
+                        <span class="text-body"><i class="fas fa-calendar-alt me-1"></i>10/07/2024</span>
+                    </div>
+                    <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                        class="location-text mb-2" style="color: black; text-decoration: none;">Show diễn Teh Dar</a>
+                    <div class="d-flex justify-content-between w-100">
+                        <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                            class="h4 mb-0 price-text">From: 490.000đ</a>
+                        <span class="text-muted">Date: 10/07/2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="service-item">
+                    <img src="https://ticketgo.vn/uploads/images/event-logo/event_logo-c5ecdf2546d27d26b30f13ea4f70c220.jpg"
+                        class="img-fluid w-100" alt="Image">
+                </div>
+                <div class="service-link d-flex flex-column align-items-start p-3 bg-light rounded shadow-sm">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-body me-3"><i class="fas fa-map-marker-alt me-1"></i>Quảng Nam</span>
+                        <span class="text-body"><i class="fas fa-calendar-alt me-1"></i>10/07/2024</span>
+                    </div>
+                    <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                        class="location-text mb-2" style="color: black; text-decoration: none;">Show diễn Teh Dar</a>
+                    <div class="d-flex justify-content-between w-100">
+                        <a href="https://ticketgo.vn/event/teh-dar-san-khau-duong-dai-dam-chat-van-hoa-tay-nguyen"
+                            class="h4 mb-0 price-text">From: 490.000đ</a>
+                        <span class="text-muted">Date: 10/07/2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="">
+
+                                <div class="title-border-left uppercase bold">Thông tin khách hàng / Customer
+                                    Information</div>
+                                <div class="clearfix clearfix-15"></div>
+                                <div class="form-group">
+                                    <label>Họ tên / Fullname: </label>
+                                    <input id="name" class="form-control" name="name" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>Điện thoại / Phone: </label>
+                                    <input id="phone" class="form-control" name="phone" type="text">
+                                </div>
+                                <div class="cover-form-group">
+                                    <div class="form-group">
+                                        <label>Email: </label>
+                                        <input id="email" class="form-control" name="email" type="text">
+                                    </div>
+                                </div>
+                                <div class="cover-form-group">
+                                    <div class="form-group">
+                                        <label>Địa chỉ / Address:</label>
+                                        <input id="address" class="form-control" name="address" type="text">
+                                    </div>
+                                </div>
+
+
+                                <input type="hidden" id="shipping_hidden">
+
+
+
+
+                            </div>
+                            <div class="">
+
+                                <div class="title-border-left uppercase bold mt-3 mb-3"> PAYMENT METHOD
+                                </div>
+                                <div class="clearfix clearfix-15"></div>
+                                <div class="payment-methods">
+                                    <h2>Chọn phương thức thanh toán</h2>
+                                    <form>
+
+                                        <label class="payment-option">
+                                            <input type="radio" name="payment-method" value="zalopay">
+                                            Ví điện tử Phantom / Phantom Wallet
+                                        </label>
+
+                                        <label class="payment-option">
+                                            <input type="radio" name="payment-method" value="momo">
+                                            Tài Khoản Ngân Hàng / Internet Banking
+                                        </label>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div style="margin:auto;width:90%;margin-bottom: 15px;">
+                                    <img style="display: block; margin-left: auto; margin-right: auto;"
+                                        src="https://ticketgo.vn/images/1906.jpg" width="100%">
+                                </div>
+                            </div>
+                            <div class="cartb">
+                                <div class="title-border-left uppercase bold">Giỏ hàng của bạn / Shopping Cart</div>
+                                <div class="clearfix clearfix-15"></div>
+                                <div>
+                                    <div class="shopping-cart">
+                                        <h2>GIỎ HÀNG CỦA BẠN / SHOPPING CART</h2>
+                                        <table class="table table-bordered">
+
+                                            <tbody>
+                                                <!-- Vé Sắc Màu -->
+                                                <tr>
+                                                    <td colspan="5">Vé Sắc Màu</td>
+                                                    <td colspan="2">4,800,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <!-- Vé Thăng Hoa -->
+                                                <tr>
+                                                    <td colspan="4">Vé Thăng Hoa</td>
+                                                    <td colspan="3">4,200,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <!-- Vé Nhật Thực -->
+                                                <tr>
+                                                    <td colspan="4">Vé Nhật Thực</td>
+                                                    <td colspan="3">3,800,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <!-- Vé Tình Ca -->
+                                                <tr>
+                                                    <td colspan="4">Vé Tình Ca</td>
+                                                    <td colspan="3">2,500,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <!-- Vé Ngẫu Hứng Phố -->
+                                                <tr>
+                                                    <td colspan="4">Vé Ngẫu Hứng Phố</td>
+                                                    <td colspan="3">1,800,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <!-- Vé Dệt Tầm Gai -->
+                                                <tr>
+                                                    <td colspan="4">Vé Dệt Tầm Gai</td>
+                                                    <td colspan="3">1,200,000 VNĐ</td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button class="btn-danger btn-sm" type="button"
+                                                                data-action="decrease" data-ticket-id="5187">-</button>
+                                                            <input type="text" value="0"
+                                                                class="form-control quantity-input" readonly>
+                                                            <button class="btn-info btn-sm" type="button"
+                                                                data-action="increase" data-ticket-id="5187">+</button>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+                                    <div class="quantity_error text-danger" style="font-weight: bold;margin-top:10px">
+                                    </div>
+                                    <div class="clearfix clearfix-15"></div>
+
+                                    <div class="col-xs-12">
+                                        <table class="table table-hover table-bordered">
+                                            <tbody>
+                                                <tr class="hidden shipping_msg_box">
+                                                    <td>Phí ship</td>
+                                                    <td class="text-right"><span class="shipping_msg"></span> VNĐ
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tổng cộng / Total</td>
+                                                    <td class="text-right"><span id="total_number_ticket"
+                                                            class="orange-color uppercase bold" data-total="0" total="0"
+                                                            discount="0">0</span> <span
+                                                            class="orange-color uppercase bold">VNĐ</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="clearfix clearfix-15"></div>
+                                    <div class="col-xs-12">
+                                        <div class="form-group agree-checkbox">
+                                            <label>
+                                                <input type="checkbox" name="agree" class="form-check-input" id="agree"
+                                                    value="1" checked>
+                                                <span class="checkbox-label">
+                                                    Tôi đồng ý với các <a
+                                                        href="https://ticketgo.vn/page/chinh-sach-dieu-khoan-su-dung-cho-khach-hang"
+                                                        target="_blank">Điều khoản & Chính sách của PassExchange.vn</a>
+                                                </span>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit" id="ladda_button"
+                                            class="btn btn-block orange-background ladda-button"
+                                            data-style="expand-left"><span class="ladda-label">
+                                                Continues</span>
+                                        </button>
+                                    </div>
+                                    <div class="close-button" style="margin-top:20px;">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d584f42692.js" crossorigin="anonymous"></script>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark text-body py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="mb-4 text-white">Newsletter</h4>
+                        <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                        <div class="position-relative mx-auto">
+                            <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Enter your email">
+                            <button type="button"
+                                class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Our Services</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Ocean Turtle</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> White Tiger</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Social Ecology</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Loneliness</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Beauty of Life</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Present for You</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Volunteer</h4>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Karen Dawson</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Jack Simmons</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Michael Linden</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Simon Green</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Natalie Channing</a>
+                        <a href=""><i class="fas fa-angle-right me-2"></i> Caroline Gerwig</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="mb-4 text-white">Our Gallery</h4>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="footer-gallery">
+                                    <img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                    <div class="footer-search-icon">
+                                        <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6"
+                                            class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site
+                            Name</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a href="#" class="btn-hover-color btn-square text-white me-2"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn-hover-color btn-square text-white me-2"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn-hover-color btn-square text-white me-2"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn-hover-color btn-square text-white me-2"><i
+                                class="fab fa-pinterest"></i></a>
+                        <a href="#" class="btn-hover-color btn-square text-white me-0"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end text-body">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
+                        class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign-Up</title>
+<link rel="stylesheet"
+	href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styl.css">
+</head>
+
+<body>
+	<section class="bg-light p-2 p-md-4">
+		<div class="container" id="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-xxl-11">
+					<div class="card border-light-subtle shadow-sm">
+						<div class="row g-0">
+							<div
+								class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+								<div class="col-12 col-lg-11 col-xl-10">
+									<div class="card-body p-3 p-md-4 p-xl-5 ">
+										<div class="row">
+											<div class="col-12">
+												<div class="mb-5">
+													<div class="text-center mb-4">
+														<a href="#!"> <img src="/img/logo.jpg" alt="Logo"
+															width="150" height="57">
+														</a>
+													</div>
+
+												</div>
+											</div>
+										</div>
+										<form th:action="@{/signup}" method="post"
+											th:object="${users}">
+											<div
+												class="row gy-3 overflow-hidden form-container sign-in-container">
+												<h4 class="text-center">ĐĂNG KÍ</h4>
+												<!-- First name -->
+												<div class="col-lg-6 form-group">
+													<label class="form-label">Enter first name</label> <input
+														type="text" class="form-control" id="su-fname"
+														th:field="*{firstName}">
+													<div class="invalid-feedback"></div>
+												</div>
+												<!-- Last name -->
+												<div class="col-lg-6 form-group">
+													<label class="form-label">Enter last name</label> <input
+														type="text" class="form-control" id="su-lname"
+														th:field="*{lastName}">
+													<div class="invalid-feedback"></div>
+												</div>
+												<!-- Country -->
+												<div class="mb-3 form-group">
+													<label class="form-label">Select Country</label>
+													<div class="form-control-bg-dark form-fs-md">
+														<select id="su-country" class="form-select js-choice"
+															th:field="*{country}">
+															<option value="" selected>Select your country</option>
+															<option value="An Giang">An Giang</option>
+															<option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng
+																Tàu</option>
+															<option value="Bắc Giang">Bắc Giang</option>
+															<option value="Bắc Kạn">Bắc Kạn</option>
+															<option value="Bạc Liêu">Bạc Liêu</option>
+															<option value="Bắc Ninh">Bắc Ninh</option>
+															<option value="Bến Tre">Bến Tre</option>
+															<option value="Bình Dương">Bình Dương</option>
+															<option value="Bình Định">Bình Định</option>
+															<option value="Bình Phước">Bình Phước</option>
+															<option value="Bình Thuận">Bình Thuận</option>
+															<option value="Cà Mau">Cà Mau</option>
+															<option value="Cần Thơ">Cần Thơ</option>
+															<option value="Cao Bằng">Cao Bằng</option>
+															<option value="Đà Nẵng">Đà Nẵng</option>
+															<option value="Đắk Lắk">Đắk Lắk</option>
+															<option value="Đắk Nông">Đắk Nông</option>
+															<option value="Điện Biên">Điện Biên</option>
+															<option value="Đồng Nai">Đồng Nai</option>
+															<option value="Đồng Tháp">Đồng Tháp</option>
+															<option value="Gia Lai">Gia Lai</option>
+															<option value="Hà Giang">Hà Giang</option>
+															<option value="Hà Nam">Hà Nam</option>
+															<option value="Hà Nội">Hà Nội</option>
+															<option value="Hà Tĩnh">Hà Tĩnh</option>
+															<option value="Hải Dương">Hải Dương</option>
+															<option value="Hải Phòng">Hải Phòng</option>
+															<option value="Hậu Giang">Hậu Giang</option>
+															<option value="Hồ Chí Minh">Hồ Chí Minh</option>
+															<option value="Hoà Bình">Hoà Bình</option>
+															<option value="Hưng Yên">Hưng Yên</option>
+															<option value="Khánh Hòa">Khánh Hòa</option>
+															<option value="Kiên Giang">Kiên Giang</option>
+															<option value="Kon Tum">Kon Tum</option>
+															<option value="Lai Châu">Lai Châu</option>
+															<option value="Lâm Đồng">Lâm Đồng</option>
+															<option value="Lạng Sơn">Lạng Sơn</option>
+															<option value="Lào Cai">Lào Cai</option>
+															<option value="Long An">Long An</option>
+															<option value="Nam Định">Nam Định</option>
+															<option value="Nghệ An">Nghệ An</option>
+															<option value="Ninh Bình">Ninh Bình</option>
+															<option value="Ninh Thuận">Ninh Thuận</option>
+															<option value="Phú Thọ">Phú Thọ</option>
+															<option value="Phú Yên">Phú Yên</option>
+															<option value="Quảng Bình">Quảng Bình</option>
+															<option value="Quảng Nam">Quảng Nam</option>
+															<option value="Quảng Ngãi">Quảng Ngãi</option>
+															<option value="Quảng Ninh">Quảng Ninh</option>
+															<option value="Quảng Trị">Quảng Trị</option>
+															<option value="Sóc Trăng">Sóc Trăng</option>
+															<option value="Sơn La">Sơn La</option>
+															<option value="Tây Ninh">Tây Ninh</option>
+															<option value="Thái Bình">Thái Bình</option>
+															<option value="Thái Nguyên">Thái Nguyên</option>
+															<option value="Thanh Hóa">Thanh Hóa</option>
+															<option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+															<option value="Tiền Giang">Tiền Giang</option>
+															<option value="Trà Vinh">Trà Vinh</option>
+															<option value="Tuyên Quang">Tuyên Quang</option>
+															<option value="Vĩnh Long">Vĩnh Long</option>
+															<option value="Vĩnh Phúc">Vĩnh Phúc</option>
+															<option value="Yên Bái">Yên Bái</option>
+														</select>
+														<div class="invalid-feedback"></div>
+													</div>
+												</div>
+												<!-- Email -->
+												<div class="mb-3 form-group">
+													<label class="form-label">Enter email address</label> <input
+														type="email" class="form-control" id="su-email"
+														th:field="*{userName}">
+													<div class="invalid-feedback"></div>
+												</div>
+												<!-- Password -->
+												<div class="mb-3 position-relative form-group">
+													<label class="form-label">Enter password</label> <input
+														class="form-control fakepassword password position-relative"
+														name="password" type="password" id="su-password"
+														th:field="*{password}" /> <span
+														class="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
+														<i
+														class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
+													</span>
+													<ul class="valid-password d-none">
+														<div class="batbuoc">
+															<p class="" style="margin-bottom: 4px;">Password
+																Requirements</p>
+															<li class="length">Must be between 8 and 20
+																characters long.</li>
+														</div>
+														<div class="true3in4 mt-2">
+															<p class="" style="margin-bottom: 4px;">Must contain
+																at least 3 out of 4 of these:</p>
+															<li class="lowercase">Must contain at least one
+																lowercase letter.</li>
+															<li class="uppercase">Must contain at least one
+																uppercase letter.</li>
+															<li class="number">Must contain at least one number.</li>
+															<li class="special">Must contain at least one
+																special character.</li>
+														</div>
+														<div class="trueValid d-none">
+															<p class="" style="margin-bottom: 4px;">Password
+																Requirements</p>
+															<li class="true-valid valid">Valid.</li>
+														</div>
+													</ul>
+													<div class="invalid-feedback" style="color: red;"></div>
+												</div>
+												<!-- Confirm Password -->
+												<div class="mb-3 form-group">
+													<label class="form-label">Confirm Password</label> <input
+														type="password" class="form-control"
+														id="su-password-confirm" name="cfPassword">
+													<div class="invalid-feedback"></div>
+												</div>
+												<div class="col-12">
+													<div class="d-grid">
+														<button class="btn btn-lg ghost" type="submit"
+															style="background-color: rgb(255, 145, 76);">Đăng
+															kí</button>
+													</div>
+												</div>
+											</div>
+										</form>
+
+
+										<p class="text-center mt-4">Or sign in with</p>
+										<div class="row mt-1">
+											<div class="col-12">
+												<div class="d-flex gap-3 flex-column">
+													<a href="#!"
+														class="btn btn-lg btn-outline-dark btn-outline-dark-custom">
+														<svg xmlns="http://www.w3.org/2000/svg" width="16"
+															height="16" fill="currentColor" class="bi bi-google"
+															viewBox="0 0 16 16">
+                                                            <path
+																d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                                                        </svg> <span
+														class="ms-2 fs-6">Log in with Google</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+								<div class="col-12 col-lg-11 col-xl-10">
+									<div class="card-body p-3 p-md-4 p-xl-5 ">
+										<div class="row">
+											<div class="col-12">
+												<div class="mb-5">
+													<div class="text-center mb-4">
+														<a href="#!"> <img src="/img/logo.jpg" alt="Logo"
+															width="175" height="57">
+														</a>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="overlay-container">
+										<div class="overlay">
+											<div class="overlay-panel overlay-left">
+												<h1>Hello, Friend!</h1>
+												<p>Enter your personal details and start journey with us</p>
+												<h5>Or</h5>
+												<a href="/signin" class="text-decoration-none"
+													style="color: white; font-size: 1.2rem; font-weight: bold;">Login</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	</section>
+
+</body>
+
+</html>
