@@ -29,21 +29,6 @@ public class UsersService {
 		// this.authoritiesDAO.save(authorities);
 		return this.usersDAO.save(users);
 	}
-
-	@Transactional
-	public Optional<Users> findById(String username) {
-		return this.usersDAO.findById(username);
-	}
-
-	public boolean isUserExists(String username) {
-		return findById(username).isPresent();
-	}
-
-	@Transactional
-	public Users saveUser(Users users) {
-		return usersDAO.save(users);
-	}
-
 	public boolean isValidEmailAddress(String email) {
 		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 		Pattern pattern = Pattern.compile(emailRegex);
@@ -72,13 +57,13 @@ public class UsersService {
 		return conditionsMet >= 3;
 	}
 
-	public Users authenticate(String userName, String password) {
-		Users user = usersDAO.findByUserName(userName);
-		if (user != null && user.getPassword().equals(password)) {
-			return user; // Return user if credentials are correct
-		}
-		
-		return null; // Return null if user not found or credentials are incorrect
-	}
+//	public Users authenticate(String userName, String password) {
+//		Users user = usersDAO.findByUserName(userName);
+//		if (user != null && user.getPassword().equals(password)) {
+//			return user; // Return user if credentials are correct
+//		}
+//
+//		return null; // Return null if user not found or credentials are incorrect
+//	}
 
 }
