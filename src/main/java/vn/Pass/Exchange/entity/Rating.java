@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "raiting")
-public class Raiting {
+@Table(name = "rating")
+public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Raiting {
     private Timestamp createdAt;
 
     @ManyToOne
-    @JoinColumn(name = "ticket_id", referencedColumnName = "ticket_id", nullable = false)
+    @JoinColumn(name = "ticket_id", nullable = false)
     private Ticket ticket;
 
     @ManyToOne
@@ -38,10 +38,10 @@ public class Raiting {
 
     // Constructors
 
-    public Raiting() {
+    public Rating() {
     }
 
-    public Raiting(int rating, String description, String statusName, Timestamp createdAt, Ticket ticket, Transactions transaction, Users users) {
+    public Rating(int rating, String description, String statusName, Timestamp createdAt, Ticket ticket, Transactions transaction, Users users) {
         this.rating = rating;
         this.description = description;
         this.statusName = statusName;
