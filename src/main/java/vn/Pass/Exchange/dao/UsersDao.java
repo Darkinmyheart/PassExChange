@@ -6,5 +6,4 @@ import vn.Pass.Exchange.entity.Users;
 
 @RepositoryRestResource(path = "users")
 public interface UsersDao extends JpaRepository<Users, String> {
-	 Users findByUserName(String userName);
 }
