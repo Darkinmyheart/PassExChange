@@ -24,16 +24,16 @@ public class TicketType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ticket_type_id", nullable = false)
-    private Long ticketTypeId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "ticket_type_name", nullable = false, length = 50)
-    private String ticketTypeName;
+    private String name;
 
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "created_date", nullable = false, updatable = false)
+    @Column(name = "createddate", nullable = false, updatable = false)
     private LocalDate createdDate;
 
     @Column(name = "end_date", nullable = false)
@@ -41,5 +41,4 @@ public class TicketType {
 
     @OneToMany(mappedBy = "ticketType", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Ticket> tickets;
-    
 }

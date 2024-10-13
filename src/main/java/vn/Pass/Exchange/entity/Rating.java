@@ -34,21 +34,21 @@ public class Rating {
 
     @ManyToOne
     @JoinColumn(name = "username", referencedColumnName = "username", nullable = false)
-    private Users users;
+    private User user;
 
     // Constructors
 
     public Rating() {
     }
 
-    public Rating(int rating, String description, String statusName, Timestamp createdAt, Ticket ticket, Transactions transaction, Users users) {
+    public Rating(int rating, String description, String statusName, Timestamp createdAt, Ticket ticket, Transactions transaction, User user) {
         this.rating = rating;
         this.description = description;
         this.statusName = statusName;
         this.createdAt = createdAt;
         this.ticket = ticket;
         this.transaction = transaction;
-        this.users = users;
+        this.user = user;
     }
 
     // Getters and Setters
@@ -109,12 +109,12 @@ public class Rating {
         this.transaction = transaction;
     }
 
-    public Users getUsers() {
-        return users;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setUsers(User user) {
+        this.user = user;
     }
 
     @Override
@@ -127,7 +127,7 @@ public class Rating {
                 ", createdAt=" + createdAt +
                 ", ticket=" + ticket +
                 ", transaction=" + transaction +
-                ", users=" + users +
+                ", user=" + user +
                 '}';
     }
 }
