@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+</head>
+
+<body>
+    <!-- Modal -->
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body p-4">
+
+                            <div class="row">
+
+                                <div class="col-lg-7">
+                                    <h5 class="mb-3">
+                                        <a href="#!" class="text-body">
+                                            <i class="fas fa-long-arrow-alt-left me-2"></i>Về Trang Chủ
+                                        </a>
+                                    </h5>
+                                    <hr>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <div>
+                                            <p class="mb-1">Giỏ Hàng Của Bạn</p>
+                                            <p class="mb-0">Giỏ Hàng Hiện Có 4 Sản Phẩm</p>
+                                        </div>
+                                        <div>
+                                            <p class="mb-0">
+                                                <span class="text-muted">Sắp Xếp Theo:</span>
+                                                <a href="#!" class="text-body">Giá <i
+                                                        class="fas fa-angle-down mt-1"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sản phẩm giỏ hàng -->
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex flex-row align-items-center">
+                                                    <div>
+                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                                            class="img-fluid rounded-3" alt="Shopping item"
+                                                            style="width: 65px;">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <h5>Iphone 11 pro</h5>
+                                                        <p class="small mb-0">256GB, Navy Blue</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row align-items-center">
+                                                    <div style="width: 50px;">
+                                                        <h5 class="fw-normal mb-0">2</h5>
+                                                    </div>
+                                                    <div style="width: 80px;">
+                                                        <h5 class="mb-0">$900</h5>
+                                                    </div>
+                                                    <a href="#!" style="color: #cecece;"><i
+                                                            class="fas fa-trash-alt"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tương tự cho các sản phẩm khác -->
+                                    <!-- ... -->
+
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="card bg-primary text-white rounded-3">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <h5 class="mb-0">Thông tin chuyển khoản</h5>
+                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                                                    class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                                            </div>
+
+                                            <p class="small mb-2">Chọn Phương thức thanh toán</p>
+
+                                            <!-- Các icon thanh toán -->
+                                            <a href="#!" type="button" class="text-white payment-method">
+                                                <i class="fab fa-cc-visa fa-2x me-2"></i>
+                                            </a>
+                                            <a href="#!" type="button" class="text-white payment-method">
+                                                <i class="fab fa-cc-amex fa-2x me-2"></i>
+                                            </a>
+                                            <a href="#!" type="button" class="text-white payment-method">
+                                                <i class="fab fa-cc-paypal fa-2x"></i>
+                                            </a>
+
+                                            <!-- Icon thanh toán Smart Banking -->
+                                            <a href="#!" type="submit" class="text-white payment-SmartBanking">
+                                                <img src="img/debit-card.png" alt="Smart Banking">
+                                            </a>
+
+                                            <!-- Form chứa thông tin chuyển khoản (ban đầu bị ẩn) -->
+                                            <form class="mt-4" id="payment-form" style="display: none;">
+                                                <div class="form-outline form-white mb-4">
+                                                    <input type="text" id="typeName"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="Tên Người Nhận" />
+                                                    <label class="form-label" for="typeName">Tên Chủ Thẻ</label>
+                                                </div>
+
+                                                <div class="form-outline form-white mb-4">
+                                                    <input type="text" id="typeText"
+                                                        class="form-control form-control-lg" placeholder="145012092" />
+                                                    <label class="form-label" for="typeText">Số Tài Khoản Ngân
+                                                        Hàng</label>
+                                                </div>
+
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-outline form-white">
+                                                            <input type="text" id="typeExp"
+                                                                class="form-control form-control-lg"
+                                                                placeholder="MM/YYYY" />
+                                                            <label class="form-label" for="typeExp">Ngày Giao
+                                                                Dịch</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-outline form-white">
+                                                            <input type="password" id="typeCvv"
+                                                                class="form-control form-control-lg"
+                                                                placeholder="CVV" />
+                                                            <label class="form-label" for="typeCvv">CVV</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                            <!-- Nút thanh toán -->
+                                            <button class="btn btn-outline-light btn-lg px-3" type="button"
+                                                id="show-payment-form">Thanh toán</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript để xử lý hiển thị -->
+    <script>
+        // Lấy các phần tử liên quan
+        const paymentIcons = document.querySelectorAll('.payment-method');
+        const paymentSmartBankingIcon = document.querySelectorAll('.payment-SmartBanking');
+        const paymentForm = document.getElementById('payment-form');
+        const showPaymentButton = document.getElementById('show-payment-form');
+
+        let isPaymentMethodSelected = false; // Biến kiểm tra phương thức thanh toán
+
+        // Gán sự kiện click cho các icon phương thức thanh toán
+        paymentIcons.forEach(icon => {
+            icon.addEventListener('click', function () {
+                isPaymentMethodSelected = true; // Khi chọn phương thức thanh toán
+                paymentForm.style.display = 'none'; // Ban đầu ẩn form đi khi chọn phương thức
+            });
+        });
+
+        // Gán sự kiện click cho icon Smart Banking
+        paymentSmartBankingIcon.forEach(icon => {
+            icon.addEventListener('click', function () {
+                isPaymentMethodSelected = true;
+                paymentForm.style.display = 'none'; // Ban đầu ẩn form khi chọn Smart Banking
+            });
+        });
+
+        // Gán sự kiện click cho nút thanh toán
+        showPaymentButton.addEventListener('click', function () {
+            if (isPaymentMethodSelected) {
+                // Nếu đã chọn phương thức thanh toán thì hiển thị form
+                paymentForm.style.display = 'block';
+            } else {
+                alert('Vui lòng chọn phương thức thanh toán trước.');
+            }
+        });
+    </script>
+</body>
+
+</html>
