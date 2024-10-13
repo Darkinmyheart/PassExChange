@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
     .topbar {
-        display: none;    
+        display: none;
     }
 }
 /*** Topbar End ***/
@@ -177,7 +177,7 @@
 
 .carousel-header #carouselId .carousel-inner .carousel-item {
     position: relative;
-    min-height: 100vh 
+    min-height: 100vh
 }
 
 .carousel-header #carouselId .carousel-inner .carousel-item img {
@@ -238,7 +238,7 @@
     border-radius: 12px !important;
     border: 5px solid transparent;
     transition: 0.5s;
-    
+
 }
 
 .carousel-header #carouselId.carousel .carousel-indicators li.active {
@@ -278,15 +278,15 @@
 
 .service .service-item .service-link {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
-    padding: 20px; 
-    bottom: 0; 
-    left: 0; 
-    display: flex; 
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    bottom: 0;
+    left: 0;
+    display: flex;
     align-items: end;
     background: rgba(0, 0, 0, 0.3);
-    transition: 0.5s; 
+    transition: 0.5s;
 }
 
 .service .service-item .service-link:hover {
@@ -334,11 +334,11 @@
 
 .donation .donation-item .donation-content {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
-    padding: 20px; 
-    justify-content: end; 
-    bottom: -60px; 
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    justify-content: end;
+    bottom: -60px;
     left: 0;
     transition: 0.5s;
     z-index: 3;
@@ -346,11 +346,11 @@
 
 .donation .donation-item:hover .donation-content {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
-    padding: 20px; 
-    justify-content: end; 
-    bottom: 0px; 
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    justify-content: end;
+    bottom: 0px;
     left: 0;
     background: rgba(0, 0, 0, 0.6);
 }
@@ -374,7 +374,7 @@
     width: 100%;
     text-align: center;
     border-style: dotted;
-    border-color: var(--bs-white); 
+    border-color: var(--bs-white);
     font-size: 30px;
 }
 /*** Counter End ***/
@@ -394,7 +394,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: 0 !important; 
+    bottom: 0 !important;
     left: 0;
     display: flex;
     justify-content: space-between;
@@ -417,7 +417,7 @@
 
 .causes .causes-item .causes-img .causes-dination {
     position: absolute;
-    top: 0; 
+    top: 0;
     right: 0;
 }
 
@@ -501,8 +501,8 @@
 }
 .event .event-carousel .event-item .event-content {
     border-style: dotted;
-    border-top: 0; 
-    border-color: var(--bs-white); 
+    border-top: 0;
+    border-color: var(--bs-white);
     background: var(--bs-secondary);
 }
 /*** Events End ***/
@@ -579,7 +579,7 @@
     position: absolute;
     width: 100%;
     height: 0;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     background: rgba(249, 195, 123, .4);
     text-align: center;
@@ -833,7 +833,8 @@ body {
 
 /* Nút tìm kiếm */
 .style__Wrapper-sc-czt9o-0.eyfsCu button {
-    background-color: rgb(281, 148, 100);
+    background-color: #f8b864;
+    border-color: #f8b864;
     color: white;
     border: none;
     border-radius: 4px;
@@ -843,8 +844,36 @@ body {
 }
 
 .style__Wrapper-sc-czt9o-0.eyfsCu button:hover {
-    background-color: #444950;
+    background: var(--bs-secondary) !important;
+    color: var(--bs-primary) !important;
 }
 
+ /* Tạo điểm nhấn cho dropdown */
+ .dropdown-menu {
+    transition: all 0.3s ease; /* Hiệu ứng mượt khi mở dropdown */
+}
+
+/* Thay đổi màu sắc khi hover vào mục trong dropdown */
+.dropdown-item:hover {
+
+    color: white; /* Màu chữ khi hover */
+    transition: background-color 0.2s ease; /* Hiệu ứng chuyển màu */
+}
+
+/* Hiệu ứng khi nhấn vào nút dropdown */
+.dropdown-toggle {
+    background-color: #f8f9fa; /* Màu nền nút dropdown */
+
+    padding: 10px 15px; /* Căn chỉnh khoảng cách bên trong */
+    border-radius: 8px; /* Góc bo tròn */
+    transition: all 0.3s ease; /* Hiệu ứng khi di chuột vào */
+}
+
+/* CSS Giỏ Hàng */
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
 
 
