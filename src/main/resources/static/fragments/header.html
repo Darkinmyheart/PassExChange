@@ -1,0 +1,121 @@
+<!-- header.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Header Fragment</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar start -->
+    <div class="container-fluid fixed-top px-0" th:fragment="headerFragment">
+        <div class="container px-0" style="max-width: 100%;">
+            <div class="topbar">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-8">
+                        <div class="topbar-info d-flex flex-wrap">
+                            <a href="#" class="text-light me-4"><i
+                                    class="fas fa-envelope text-white me-2"></i>minhtac103@gmail.com</a>
+                            <a href="#" class="text-light"><i
+                                    class="fas fa-phone-alt text-white me-2"></i>+0395740351</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="topbar-icon d-flex align-items-center justify-content-end">
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-light bg-light navbar-expand-xl">
+                <a href="index.html" class="navbar-brand ms-3">
+                    <h1 class="text-primary display-6">PassExChange</h1>
+                </a>
+                <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+
+                <div class="style__Wrapper-sc-czt9o-0 eyfsCu">
+                    <span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            id="search-icon">
+                            <path d="M11 17a6 6 0 100-12 6 6 0 000 12zM18.5 18.5l-3-3" stroke="#2A2D34" stroke-width="2"
+                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                    <input type="text" name="search-input" id="search-input" disabled=""
+                        placeholder="Bạn tìm gì hôm nay?" value="">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#searchModal">Tìm kiếm</button>
+                </div>
+
+                <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
+                    <div class="d-flex justify-content-between align-items-center w-100 px-4">
+                        <div class="d-flex align-items-center flex-nowrap">
+                            <a href="postTicket.html" class="btn-hover-bg btn btn-primary text-white"
+                                style="border-radius: 8px;">Đăng bán vé</a>
+                        </div>
+
+                        <div class="navbar-nav ms-auto">
+                            <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Danh mục</a>
+                                <div class="dropdown-menu">
+                                    <a href="about.html" class="dropdown-item">Âm nhạc</a>
+                                    <a href="service.html" class="dropdown-item">Sân khấu & Nghệ Thuật</a>
+                                    <a href="causes.html" class="dropdown-item">Phim ảnh</a>
+                                    <a href="events.html" class="dropdown-item">Sự kiện</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-ticket-detailed me-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M5 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2z" />
+                                <path
+                                    d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
+                            </svg>
+                            <a href="http://" class="text-decoration-none">Giỏ hàng</a>
+                        </div>
+
+                        <div class="d-flex align-items-center flex-nowrap" style="margin-left: 15px;">
+                            <a href="acount.html" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3"
+                                style="border-radius: 8px;">Đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+</body>
+
+</html>
