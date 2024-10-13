@@ -12,9 +12,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import lombok.Data;
+
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
+@Data
 @Table(name = "ticket_types")
 public class TicketType {
 
@@ -36,64 +40,6 @@ public class TicketType {
     private LocalDate endDate;
 
     @OneToMany(mappedBy = "ticketType", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ticket> tickets;
+    private Set<Ticket> tickets;
     
-    // Constructors, getters, and setters
-
-    public TicketType() {
-    }
-
-    public TicketType(Long ticketTypeId, String ticketTypeName, String description, LocalDate endDate) {
-        this.ticketTypeId = ticketTypeId;
-        this.ticketTypeName = ticketTypeName;
-        this.description = description;
-        this.endDate = endDate;
-    }
-
-    // Getters and Setters
-
-    public Long getTicketTypeId() {
-        return ticketTypeId;
-    }
-
-    public void setTicketTypeId(Long ticketTypeId) {
-        this.ticketTypeId = ticketTypeId;
-    }
-
-    public String getTicketTypeName() {
-        return ticketTypeName;
-    }
-
-    public void setTicketTypeName(String ticketTypeName) {
-        this.ticketTypeName = ticketTypeName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDate getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDate createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        createdDate = LocalDate.now();
-    }
 }
