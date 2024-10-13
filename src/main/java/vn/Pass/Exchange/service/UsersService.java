@@ -1,69 +1,73 @@
 package vn.Pass.Exchange.service;
 
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-//import vn.p.pet.dao.AuthoritiesDAO;
-import vn.Pass.Exchange.dao.UsersDao;
-//import vn.finder.pet.entity.Authorities;
-import vn.Pass.Exchange.entity.Users;
+import vn.Pass.Exchange.DTO.UserDTO;
+import vn.Pass.Exchange.Mapper.UserMapper;
+import vn.Pass.Exchange.Request.SignupRequest;
+import vn.Pass.Exchange.dao.AccountRepository;
+import vn.Pass.Exchange.dao.AccountRoleMappingRepository;
+import vn.Pass.Exchange.dao.RoleRepository;
+import vn.Pass.Exchange.dao.UserRepository;
+import vn.Pass.Exchange.entity.Account;
+import vn.Pass.Exchange.entity.AccountRoleMapping;
+import vn.Pass.Exchange.entity.Role;
+import vn.Pass.Exchange.entity.User;
 
-import java.util.Optional;
-import java.util.regex.Pattern;
+import java.time.LocalDateTime;
 
 @Service
 public class UsersService {
-	private UsersDao usersDAO;
-	// private AuthoritiesDAO authoritiesDAO;
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    AccountRepository accountRepository;
+    @Autowired
+    UserMapper userMapper;
+    @Autowired
+    AccountRoleMappingRepository accountRoleMappingRepository;
+    @Autowired
+    RoleRepository roleRepository;
 
-	@Autowired
-	public UsersService(UsersDao usersDAO) {
-		this.usersDAO = usersDAO;
-		// this.authoritiesDAO = authoritiesDAO;
-	}
+    //Tạo user, accout, accountRoleMapping
+    public UserDTO createUser(SignupRequest signupRequest) {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String pass = passwordEncoder.encode(signupRequest.getPassword());
+        //Tạo account
+        Account acc = new Account();
+        acc.setUsername(signupRequest.getEmail());
+        acc.setPassword(pass);
+        acc.setEnabled(true);
+        Account account = accountRepository.save(acc);
+        //Role
+        Role role = roleRepository.findById("USER")
+                .orElseThrow(() -> new RuntimeException("Role not found"));
+        //Mapping account vs role
+        AccountRoleMapping accountRoleMapping = new AccountRoleMapping();
+        accountRoleMapping.setAccount(account);
+        accountRoleMapping.setRole(role);
+        accountRoleMappingRepository.save(accountRoleMapping);
+        //Tạo user
+        User user = userRepository.save(new User(1L,
+                signupRequest.getFirstname(),
+                signupRequest.getLastname(),
+                signupRequest.getCountry(),
+                null,
+                0L,
+                null,
+                LocalDateTime.now(), account)
+        );
+        return userMapper.toUserDTO(user);
+    }
 
-	@Transactional
-	public Users createdUser(Users users) {
-		// Authorities authorities = new Authorities(users, "ROLE_USER");
-		// authorities.setId(null);
-		// this.authoritiesDAO.save(authorities);
-		return this.usersDAO.save(users);
-	}
-	public boolean isValidEmailAddress(String email) {
-		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-		Pattern pattern = Pattern.compile(emailRegex);
-		return pattern.matcher(email).matches();
-	}
 
-	public boolean isValidPassword(String password) {
-		// Kiểm tra độ dài mật khẩu
-		if (password.length() < 8) {
-			return false;
-		}
-		// Kiểm tra ít nhất 3 trong 4 điều kiện
-		int conditionsMet = 0;
-		if (password.matches(".*[a-z].*")) {
-			conditionsMet++;
-		}
-		if (password.matches(".*[A-Z].*")) {
-			conditionsMet++;
-		}
-		if (password.matches(".*\\d.*")) {
-			conditionsMet++;
-		}
-		if (password.matches(".*[!@#$%^&*()-_=+\\\\|\\[{\\]};:'\",<.>/?].*")) {
-			conditionsMet++;
-		}
-		return conditionsMet >= 3;
-	}
-
-//	public Users authenticate(String userName, String password) {
-//		Users user = usersDAO.findByUserName(userName);
-//		if (user != null && user.getPassword().equals(password)) {
-//			return user; // Return user if credentials are correct
-//		}
-//
-//		return null; // Return null if user not found or credentials are incorrect
-//	}
-
+    public boolean checkEmail(String email) {
+        if (accountRepository.findById(email).isPresent()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

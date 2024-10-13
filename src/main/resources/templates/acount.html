@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,6 @@
                 <div class="col-12 col-xxl-11">
                     <div class="card border-light-subtle shadow-sm">
                         <div class="row g-0">
-
                             <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                                 <div class="col-12 col-lg-11 col-xl-10">
                                     <div class="card-body p-3 p-md-4 p-xl-5 ">
@@ -33,27 +32,25 @@
                                             </div>
                                         </div>
 
-                                        <form action="#!">
+                                        <form id="signupForm">
                                             <div class="row gy-3 overflow-hidden form-container sign-in-container">
                                                 <h4 class="text-center">ĐĂNG KÍ</h4>
                                                 <!-- First name -->
                                                 <div class="col-lg-6 form-group">
                                                     <label class="form-label">Enter first name</label>
-                                                    <input type="text" class="form-control" id="su-fname">
-                                                    <div class="invalid-feedback"> </div>
+                                                    <input type="text" class="form-control" id="reg-fname" required>
                                                 </div>
                                                 <!-- Last name -->
                                                 <div class="col-lg-6 form-group">
                                                     <label class="form-label">Enter last name</label>
-                                                    <input type="text" class="form-control" id="su-lname">
-                                                    <div class="invalid-feedback"> </div>
+                                                    <input type="text" class="form-control" id="reg-lname" required>
                                                 </div>
                                                 <!-- Country -->
                                                 <div class="mb-3 form-group">
                                                     <label class="form-label">Select Country</label>
                                                     <div class="form-control-bg-dark form-fs-md">
-                                                        <select id="su-country" class="form-select js-choice"
-                                                            name="country">
+                                                        <select id="reg-country" class="form-select js-choice"
+                                                            name="country" required>
                                                             <option value="" selected>Select your country</option>
                                                             <option>An Giang</option>
                                                             <option>Bà Rịa - Vũng Tàu</option>
@@ -119,26 +116,26 @@
                                                             <option>Vĩnh Phúc</option>
                                                             <option>Yên Bái</option>
                                                         </select>
-                                                        <div class="invalid-feedback"> </div>
+                                                        <div class="invalid-feedback" > </div>
                                                     </div>
                                                 </div>
                                                 <!-- Email -->
                                                 <div class="mb-3 form-group">
                                                     <label class="form-label">Enter email address</label>
-                                                    <input type="email" class="form-control" id="su-email">
+                                                    <input type="email" class="form-control" id="reg-email" required>
                                                     <div class="invalid-feedback"> </div>
                                                 </div>
                                                 <!-- Password -->
                                                 <div class="mb-3 position-relative form-group">
                                                     <label class="form-label">Enter password</label>
                                                     <input class="form-control fakepassword password position-relative"
-                                                        name="password" type="password" id="su-password">
+                                                        name="password" type="password" id="reg-password">
                                                     <span
                                                         class="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
                                                         <i
                                                             class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
                                                     </span>
-                                                    <ul class="valid-password d-none">
+                                                    <ul id="reg-valid" class="valid-password d-none">
                                                         <div class="batbuoc">
                                                             <p class="" style="margin-bottom: 4px;">Password
                                                                 Requirements
@@ -171,7 +168,7 @@
                                                 <!-- Confirm Password -->
                                                 <div class="mb-3 form-group">
                                                     <label class="form-label">Confirm Password</label>
-                                                    <input type="password" class="form-control" id="su-password-confirm"
+                                                    <input type="password" class="form-control" id="reg-confirmPassword"
                                                         name="cfPassword">
                                                     <div class="invalid-feedback"> </div>
                                                 </div>
@@ -184,23 +181,6 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <p class="text-center mt-4">Or sign in with</p>
-                                        <div class="row mt-1">
-                                            <div class="col-12">
-                                                <div class="d-flex gap-3 flex-column">
-                                                    <a href="#!"
-                                                        class="btn btn-lg btn-outline-dark btn-outline-dark-custom">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="bi bi-google"
-                                                            viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
-                                                        </svg>
-                                                        <span class="ms-2 fs-6">Log in with Google</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -218,16 +198,22 @@
                                                     <h4 class="text-center">Chào mừng bạn đã trở lại!</h4>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>  
 
-                                        <form action="#!">
+                                        <form id="signinForm" method="post" action="/login">
                                             <h4 class="text-center">ĐĂNG NHẬP</h4>
+                                            <div th:if="${param.error}">
+                                                Invalid username and password.
+                                            </div>
+                                            <div th:if="${param.logout}">
+                                                You have been logged out.
+                                            </div>
                                             <div class="row gy-3 overflow-hidden form-container sign-in-container">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-2">
-                                                        <input type="email" class="form-control" name="email" id="email"
+                                                        <input  type="text" class="form-control" name="username" id="username"
                                                             placeholder="name@example.com" required>
-                                                        <label for="email" class="form-label">Email</label>
+                                                        <label for="username" class="form-label">Email</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -308,7 +294,91 @@
         </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <!--default-->
+    <script>
+        const signUpButton = document.getElementById("signUp");
+        const signInButton = document.getElementById("signIn");
+        const container = document.getElementById("container");
+
+
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("right-panel-active");
+        });
+        const path = window.location.pathname;
+        if (path === "/signup") {
+            container.classList.remove("right-panel-active");
+        }
+        else if (path === "/signin") {
+            container.classList.add("right-panel-active");
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--be-->
+    <script type="module">
+
+        // Hàm để xử lý submit form
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Ngăn chặn hành động submit mặc định của form
+
+            // Lấy giá trị từ các trường của form
+            const firstName = document.getElementById('reg-fname').value;
+            const lastName = document.getElementById('reg-lname').value;
+            const country = document.getElementById('reg-country').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirmPassword').value;
+
+            // Kiểm tra xác nhận mật khẩu
+            if (password !== confirmPassword) {
+                alert('Password và Confirm Password không trùng khớp');
+                return;
+            }
+            const requestData = {
+                firstname: firstName,
+                lastname: lastName,
+                country: country,
+                email: email,
+                password: password
+            };
+            console.log(requestData)
+            // Gửi yêu cầu kiểm tra email
+            axios
+                .post(`http://localhost:8080/api/account/signup`, requestData, {
+                    headers: {
+                        'Content-Type': 'application/json' // Đặt headers phù hợp khi gửi JSON
+                    }
+                }) // Thay thế bằng URL API thực của bạn
+                .then((response) => {
+                    // Kiểm tra phản hồi từ server với nhiều trường hợp
+                    switch (response.data.status) {
+                        case 'DUPLICATED':
+                            alert('Email đã được đăng ký, vui lòng sử dụng email khác.');
+                            break;
+                        case 'ERROR EMAIL_REGEX':
+                            alert('Lỗi định dạng email');
+                            break;
+                        case 'EMPTY FIELD':
+                            alert('Trống field');
+                            break;
+                        case 'ERROR PASSWORD_REGEX':
+                            alert('Định dạng password sai');
+                            break;
+                        case 'COMPLETE':
+                        console.log(response.data);
+                            break;
+                        default:
+                            alert('Đã xảy ra lỗi không xác định, vui lòng thử lại.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Lỗi khi kiểm tra email:', error.response?.data || error.message);
+                });
+        });
+    </script>
 </body>
 
 </html>

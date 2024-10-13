@@ -39,15 +39,10 @@ public class Ticket {
 
     @Column(name = "qr_code", nullable = false)
     private byte[] qrCode;
-
+    @Column(name = "quantity", nullable = false)
+    private Long quantity;
     @Column(name = "description", columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String description;
-
-    @Column(name = "location", nullable = false, length = 100, columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
-    private String location;
-
-    @Column(name = "district", nullable = false, length = 50, columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
-    private String district;
 
     @Column(name = "address", nullable = false, length = 50, columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private String address;
@@ -63,10 +58,10 @@ public class Ticket {
     @JoinColumn(name = "ticket_type_id", nullable = false)
     private TicketType ticketType;
 
-    @OneToMany(mappedBy = "ticket",fetch = FetchType.LAZY)
-    private Set<Transactions> transactions;
-
-    @OneToMany(mappedBy = "ticket",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     private Set<Rating> Ratings;
-    
+
+    @OneToOne(mappedBy = "ticket", fetch = FetchType.LAZY)
+    private TransactionDetail transactionDetail;
+
 }

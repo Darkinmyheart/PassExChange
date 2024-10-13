@@ -18,7 +18,7 @@ public class Transactions {
 
     @ManyToOne
     @JoinColumn(name = "username", nullable = false)
-    private Users users;
+    private User user;
 
     @Column(name = "payment_methods", nullable = false, length = 50)
     private String paymentMethods;
@@ -38,7 +38,4 @@ public class Transactions {
     @OneToOne(mappedBy = "transactions", cascade = CascadeType.ALL, orphanRemoval = true)
     private Invoice invoice;
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id",nullable = false)
-    private Ticket ticket;
 }

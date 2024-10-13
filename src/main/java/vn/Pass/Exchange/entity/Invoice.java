@@ -13,8 +13,8 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "invoice_id", nullable = false)
-    private Long invoiceId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
@@ -37,5 +37,5 @@ public class Invoice {
 
     @ManyToOne
     @JoinColumn(name = "username", nullable = false)
-    private Users users;
+    private User user;
 }

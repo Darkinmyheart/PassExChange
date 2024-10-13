@@ -26,14 +26,14 @@ public class Reports {
 
     @ManyToOne
     @JoinColumn(name = "username", referencedColumnName = "username", nullable = false)
-    private Users user;
+    private User user;
 
     // Constructors
 
     public Reports() {
     }
 
-    public Reports(String reason, LocalDate createdAt, String reply, String descriptions, Users user) {
+    public Reports(String reason, LocalDate createdAt, String reply, String descriptions, User user) {
         this.reason = reason;
         this.createdAt = createdAt;
         this.reply = reply;
@@ -83,11 +83,11 @@ public class Reports {
         this.descriptions = descriptions;
     }
 
-    public Users getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
